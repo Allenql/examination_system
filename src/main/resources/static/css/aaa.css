@@ -1,0 +1,325 @@
+
+body {
+    background-color: #f6f7e9;
+    background-image:url("../images/background_1.png");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-origin: padding-box;
+    background-position-x: left;
+    background-position-y: top;
+    background-size: auto auto;
+    font-family: "微软雅黑";
+}
+
+
+.logout{
+    float:right;
+    top:0;
+    height:34px;
+    margin:-90px;
+    margin:10px;
+    color: white;
+}
+
+.lan{
+	background-color: #e0e7f7;
+	border-radius: 10px;
+}
+
+.background1{
+    border-radius: 15px;
+    border: 1px solid #eeeeee;
+    background-color: #ffffff;
+    padding: 20px;
+    width: 900px;
+    margin: 0 auto;
+    margin-bottom: 5px;
+}
+
+.biaogekuang{
+	background-color: #ecf0fb;
+}
+
+.biaogekuang2{
+	background-color: #cfdbe9;
+}
+
+.block_all {
+    padding: 20px;
+    width: 900px;
+    margin: 0 auto;
+}
+
+.block_three {
+    width: 250px;
+    height: 200px;
+    float: left;
+    padding-top: 60px;
+    margin: 10px;
+    text-align:center;
+    font-size: 22px;
+    border-radius: 15px;
+    background-image:url("../images/three_choice2.png");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-origin: padding-box;
+    background-position-x: left;
+    background-position-y: top;
+    background-size: auto auto;
+}
+
+.question {
+    margin: 20px;
+    font-size: 18px;
+
+}
+
+.op {
+    margin: 16px;
+    font-size: 16px;
+    cursor:pointer
+}
+
+.ans {
+    margin: 16px;
+    font-size: 16px;
+}
+
+.textareaStyle {
+    width: 826px;
+    height: 160px;
+    border-radius: 5px;
+    border:1px solid #4090ba;
+    margin-left: 16px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.exercise_btn1 {
+    background-color: #62b5dd;
+    border: 2px solid #4CAF50;
+    border-radius: 2px;
+    color:white;
+    border: none;
+    width: 110px;
+    height: 38px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 16px;
+    cursor: pointer;
+}
+
+.exercise_btn1:hover {
+    background-color: #3e9be8;
+}
+
+input[type='submit'] {
+	background-color: #62b5dd;
+    border: 2px solid #4CAF50;
+    border-radius: 2px;
+    color:white;
+    border: none;
+    width: 180px;
+    height: 38px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 16px;
+    cursor: pointer;
+}
+
+input[type='submit']:hover {
+    background-color: #3e9be8;
+}
+
+.d_label{
+	margin:16px;
+	display:block;
+	font-size: 16px;
+}
+.d_radio{
+	display:none;
+}
+.d_radioInput{
+	background-color:#fff;
+	border:1px solid rgba(0,0,0,0.15);
+	border-radius:100%;
+	display:inline-block;
+	height:16px;
+	margin-right:10px;
+	margin-top:-1px;
+	vertical-align:middle;
+	width:16px;
+	line-height:1;
+}
+.d_radio:checked + .d_radioInput:after{
+	background-color:#57ad68;
+	border-radius:100%;
+	content:"";
+	display:block;
+	height:10px;
+	margin:2px;
+	width:10px;
+}
+.d_checkbox.d_radioInput,.d_radio:checked + .d_checkbox.d_radioInput:after{
+	border-radius:0;
+}
+
+.test_body {
+    width: 900px;
+    margin: 0 auto;
+}
+
+.test_right {
+    border-radius: 15px;
+    border: 1px solid #eeeeee;
+    background-color: #ffffff;
+	position: fixed;
+	right: 100px;
+	top: 100px;
+	width: 250px;
+	padding: 20px;
+	opacity: 0.6;
+	margin: 0 auto;
+}
+
+.time_text {
+    font-weight: bold;
+    font-size: 30px;
+    text-align:center;
+    color: #09679e;
+    margin-top: 20px;
+}
+
+.time_clock {
+    font-weight: bold;
+    font-size: 20px;
+    text-align:center;
+    color: #09679e;
+}
+
+
+.t_ul {
+    list-style-type: none;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    overflow: hidden;
+}
+
+.t_li {
+    float: left;
+    border-radius: 15px;
+}
+
+.t_li a {
+    display: block;
+    border-radius: 15px;
+    color: #666;
+    text-align: center;
+    padding: 10px 16px;
+    text-decoration: none;
+}
+
+.t_li a:hover:not(.active) {
+    background-color: #bddfce;
+}
+
+.t_li a.active {
+    color: white;
+    background-color: #a0bcae;
+}
+
+.add_block {
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+.add_btn1 {
+    background-color: #62b5dd;
+    border: 2px solid #4CAF50;
+    border-radius: 2px;
+    color:white;
+    border: none;
+    width: 120px;
+    height: 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 16px;
+    padding: 5px;
+    cursor: pointer;
+    float: right;
+}
+
+.add_btn1:hover {
+    background-color: #3e9be8;
+}
+
+.tableStyle
+{
+    width:100%;
+    border-collapse:collapse;
+}
+.tableStyle td, .tableStyle th
+{
+    font-size:1em;
+    border:1px solid #4090ba;
+    padding:3px 7px 2px 7px;
+}
+.tableStyle th
+{
+    font-size:1.1em;
+    text-align:left;
+    padding-top:5px;
+    padding-bottom:4px;
+    background-color:#55a5da;
+    color:#ffffff;
+}
+.tableStyle td
+{
+    color:#000000;
+    background-color:#ffffff;
+}
+
+.add_bottom {
+    float: right;
+    margin: 10px;
+}
+
+.alii {
+    border-radius: 15px;
+    border: 1px solid #eeeeee;
+    background-color: #eeeeee;
+    padding: 20px;
+    width: 450px;
+    margin: 0 auto;
+    margin-bottom: 5px;
+}
+
+.left_txt {
+    color:#09679e;
+    font-weight: bold;
+    width: 80px;
+
+}
+
+.left2_txt {
+    color:#087ec2;
+    width: 80px;
+}
+
+.combine_fixed {
+    position: fixed;
+    top: 70px;
+    text-align: center;
+    background-color: #eeeeee;
+    opacity: 0.8;
+    padding-top: 10px;
+}

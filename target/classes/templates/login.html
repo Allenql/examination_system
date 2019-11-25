@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+>
+
+<head>
+    <title>数据库在线系统</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <link href="css/bbb.css" type="text/css" rel="stylesheet" media="screen"/>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+        </head>
+
+<body>
+<div class="container">
+    <div class="header">
+        <img src="images/login_icon.png" style="width:30px;margin-left:21px;margin-top:11px;"/>
+    </div>
+    <div class="content">
+        <div class="content_wrapper">
+            <div id="login" class="login_container" style="visibility: visible;">
+                <div class="login_title">
+                    LOGIN
+                </div>
+                <div class="login_div">
+                    <form class="form-horizontal" method="post" id="loginForm">
+                        <div class="login_margin1">
+                            <div class="login_input_outer">
+                                <input name="account" id="inputEmail" class="login_input" type="text"
+                                       placeholder="账号"></input>
+                            </div>
+                        </div>
+                        <div class="login_margin1">
+                            <div class="login_input_outer">
+                                <input name="password" id="inputPassword" class="login_input" type="password"
+                                       placeholder="密码"></input>
+                            </div>
+                            <div class="login_margin1">
+                                <div class="login_vrifyCode">
+                                    <!-- 验证码 -->
+                                    <img alt="验证码" onclick="this.src='/defaultKaptcha?'" src="/defaultKaptcha"
+                                         id="verifyImg"/>
+                                </div>
+                                <div class="login_vrifyText">
+                                    <input type="text" name="verifyCode" class="input_vrifyCode" placeholder="验证码"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="login_margin1">
+                            <button class="login_btn1" type="submit">登录</button>
+                            <p id="alert" style="color: red;">&nbsp; </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="login_pictures">
+                <div class="login_pictures_picture">
+                </div>
+                <div class="login_pictures_txt">
+                    WELCOME TO<br/>
+                    &nbsp;&nbsp;&nbsp;陕西科技大学数据库考试系统
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer">
+        Website by @ZQL
+    </div>
+</div>
+<!--弹出验证码错误-->
+<script>
+    $('#loginForm').submit(function (e) {
+        alert(888)
+        e.preventDefault();
+        $.post("/doLogin", $('#loginForm').serialize(), function (data) {
+            if (data == "verifyCodeError") {
+                $('#verifyImg').attr('src', "/defaultKaptcha");
+                $('#alert').text("验证码错误！");
+            } else if (data == "wrongpassword") {
+                $('#verifyImg').attr('src', "/defaultKaptcha");
+                $('#alert').text("账号密码错误");
+            } else {
+                window.location.href = data;
+            }
+        })
+    })
+</script>
+</body>
+
+</html>
