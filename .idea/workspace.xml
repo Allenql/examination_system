@@ -2,22 +2,43 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c51e69bf-0a3e-4903-bf1a-0f66262f7972" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/examination/dao/JudgeMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/examination/service/PageService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/examination/service/TeacherService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/examination/service/impl/PageServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/examination/service/impl/TeacherServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/JudgeMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/examination/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/examination/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/examination/ExaminationSysApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/examination/ExaminationSysApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/examination/controller/TeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/examination/controller/TeacherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/AdminDaoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/AdminMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/teacher/question_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/teacher/question_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/teacher/teacher_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/teacher/teacher_info.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/teacher/teacherpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/teacher/teacherpage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/examination_sys.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/examination/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/examination/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/teacher/truefalse_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/teacher/truefalse_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/examination/ExaminationSysApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/examination/ExaminationSysApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/examination/controller/TeacherController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/examination/controller/TeacherController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/AdminDaoMapper.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/teacher/question_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/teacher/question_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/teacher/teacher_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/teacher/teacher_info.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/teacher/teacherpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/teacher/teacherpage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/teacher/truefalse_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/teacher/truefalse_list.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
@@ -29,7 +50,11 @@
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/examination/service/impl/TeacherServiceImpl.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/resources/templates/teacher/truefalse_list.html" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/examination/controller/LoginController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/resources/templates/teacher/question_list.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/examination/controller/TeacherController.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -39,7 +64,9 @@
     </option>
   </component>
   <component name="ProjectId" id="1U6hFMayWlrkkQeLuoBvT3hnetX" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
@@ -47,7 +74,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/智能招聘系统/microservice-recruit-master" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/在线考试系统/SpringBoot_ExaminationSystem-master" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -62,11 +89,11 @@
       <recent name="com.examination.service" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\GitHub\examination_sys\src\main\resources\mapper" />
       <recent name="C:\Users\Administrator\Desktop\examination_sys\src\main\java\com\examination\controller" />
       <recent name="C:\Users\Administrator\Desktop\examination_sys\src\main\resources" />
       <recent name="C:\Users\Administrator\Desktop\examination_sys\src\main\java\com\examination\interceptor" />
       <recent name="C:\Users\Administrator\Desktop\examination_sys\src\main\java\com\examination\entity" />
-      <recent name="C:\Users\Administrator\Desktop\examination_sys\src\main\resources\mapper" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -104,7 +131,8 @@
       <workItem from="1574686244417" duration="2594000" />
       <workItem from="1574692881586" duration="1512000" />
       <workItem from="1574766951544" duration="2761000" />
-      <workItem from="1574773819894" duration="707000" />
+      <workItem from="1574773819894" duration="7797000" />
+      <workItem from="1574853996218" duration="3145000" />
     </task>
     <task id="LOCAL-00001" summary="数据库在线考试系统项目初始化">
       <created>1574688683601</created>
@@ -127,7 +155,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574693257111</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="取消登录验证">
+      <created>1574774706876</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1574774706876</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,6 +183,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="数据库在线考试系统项目初始化" />
-    <option name="LAST_COMMIT_MESSAGE" value="数据库在线考试系统项目初始化" />
+    <MESSAGE value="取消登录验证" />
+    <option name="LAST_COMMIT_MESSAGE" value="取消登录验证" />
   </component>
 </project>

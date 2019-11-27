@@ -76,7 +76,7 @@
     $('#loginForm').submit(function (e) {
         e.preventDefault();
         $.post("/doLogin", $('#loginForm').serialize(), function (data) {
-            alert(data)
+            // alert(data)
             if (data == "verifyCodeError") {
                 $('#verifyImg').attr('src', "/defaultKaptcha");
                 $('#alert').text("验证码错误！");
