@@ -105,18 +105,18 @@
                     </table>
                     <div class="add_block">
                         <div class="add_bottom">
-                            共 <b id="total" th:text="${page.count}">10</b> 条
-                            <a th:if="${page.currentPage!=1}" href="question_list?currentPage=1">首页</a>
-                            <a th:if="${page.currentPage!=1}"
-                               th:href="'question_list?currentPage='+${page.currentPage-1}">上一页</a>
-                            当前第<span th:text="${page.currentPage}+'/'+${page.totalPage}">1</span>页
-                            <a th:if="${page.currentPage!=page.totalPage}"
-                               th:href="'question_list?currentPage='+${page.currentPage+1}">下一页</a>
-                            <a th:if="${page.currentPage!=page.totalPage}"
-                               th:href="'question_list?currentPage='+${page.totalPage}">末页</a>
-                            跳至&nbsp;<input id="currentPageText" type='text' th:value="${page.currentPage}"
-                                           style="height:26px;"/>&nbsp;页&nbsp;
-                            <a href="" id="aaa">GO</a>
+<!--                            共 <b id="total" th:text="${page.count}">10</b> 条-->
+<!--                            <a th:if="${page.currentPage!=1}" href="question_list?currentPage=1">首页</a>-->
+<!--                            <a th:if="${page.currentPage!=1}"-->
+<!--                               th:href="'question_list?currentPage='+${page.currentPage-1}">上一页</a>-->
+<!--                            当前第<span th:text="${page.currentPage}+'/'+${page.totalPage}">1</span>页-->
+<!--                            <a th:if="${page.currentPage!=page.totalPage}"-->
+<!--                               th:href="'question_list?currentPage='+${page.currentPage+1}">下一页</a>-->
+<!--                            <a th:if="${page.currentPage!=page.totalPage}"-->
+<!--                               th:href="'question_list?currentPage='+${page.totalPage}">末页</a>-->
+<!--                            跳至&nbsp;<input id="currentPageText" type='text' th:value="${page.currentPage}"-->
+<!--                                           style="height:26px;"/>&nbsp;页&nbsp;-->
+<!--                            <a href="" id="aaa">GO</a>-->
                         </div>
 
                     </div>

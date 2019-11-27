@@ -14,6 +14,8 @@ import java.util.List;
 public interface TeacherService {
     int addJudgeQuestionByExcel(InputStream inputStream);
 
+    int addChoiceQuestionByExcel(InputStream inputStream);
+
     List<JudgeQuestion> getJudgeQuestionList(Page page);
 
 }

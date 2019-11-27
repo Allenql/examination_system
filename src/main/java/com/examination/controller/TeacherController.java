@@ -49,6 +49,12 @@ public class TeacherController {
         return path + "teacher_info";
     }
 
+
+    @RequestMapping("question_list.html")
+    public String questionList() {
+        return path + "question_list";
+    }
+
     @RequestMapping("truefalse_list.html")
     public String trueFalseList(Model model, HttpServletRequest request) {
         Page page = pageService.getPage(request.getParameter("currentPage"), "judge");
@@ -58,6 +64,32 @@ public class TeacherController {
         return path + "truefalse_list";
     }
 
+    /**
+     * 选择题下载
+     * @param res
+     */
+    @RequestMapping("choice/download")
+    public void choiceDownload(HttpServletResponse res) {
+        res.setHeader("Content-Disposition", "attachment; filename=choice_template.xlsx");
+        res.setContentType("application/octet-stream; charset=utf-8");
+        try {
+            InputStream is = this.getClass().getClassLoader().getResourceAsStream("templates/excel/choice_template.xlsx");
+            FileCopyUtils.copy(is, res.getOutputStream());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @RequestMapping("choice/upload")
+    @ResponseBody
+    public boolean choiceUpload(@RequestParam(value = "file") MultipartFile file) {
+        try {
+            return teacherService.addChoiceQuestionByExcel(file.getInputStream()) != 0;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
     /**
      * 判断题模板下载
      * @param res

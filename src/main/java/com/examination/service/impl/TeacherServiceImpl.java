@@ -1,6 +1,8 @@
 package com.examination.service.impl;
 
+import com.examination.dao.ChoiceMapper;
 import com.examination.dao.JudgeMapper;
+import com.examination.entity.ChoiceQuestion;
 import com.examination.entity.JudgeQuestion;
 import com.examination.entity.Page;
 import com.examination.service.TeacherService;
@@ -25,6 +27,9 @@ public class TeacherServiceImpl implements TeacherService {
     @Autowired
     private JudgeMapper judgeMapper;
 
+    @Autowired
+    private ChoiceMapper choiceMapper;
+
     @Override
     public int addJudgeQuestionByExcel(InputStream inputStream) {
         List<JudgeQuestion> judgeQuestions = new ArrayList<>();
@@ -47,6 +52,34 @@ public class TeacherServiceImpl implements TeacherService {
             e.printStackTrace();
         }
         return judgeMapper.addByList(judgeQuestions);
+    }
+
+    @Override
+    public int addChoiceQuestionByExcel(InputStream inputStream) {
+        List<ChoiceQuestion> choiceQuestions = new ArrayList<ChoiceQuestion>();
+        try {
+            Workbook workbook = WorkbookFactory.create(inputStream);
+            Sheet sheet = workbook.getSheetAt(0);
+            DataFormatter formatter = new DataFormatter();
+
+            for (int i = 1; i <= sheet.getLastRowNum(); i++) {
+                Row row = sheet.getRow(i);
+                String question = formatter.formatCellValue(row.getCell(0));
+                String option1 = formatter.formatCellValue(row.getCell(1));
+                String option2 = formatter.formatCellValue(row.getCell(2));
+                String option3 = formatter.formatCellValue(row.getCell(3));
+                String option4 = formatter.formatCellValue(row.getCell(4));
+                String rightAnswer = formatter.formatCellValue(row.getCell(5));
+                ChoiceQuestion choiceQuestion = new ChoiceQuestion(question,option1,option2,option3,option4,rightAnswer);
+                choiceQuestions.add(choiceQuestion);
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InvalidFormatException e) {
+            e.printStackTrace();
+        }
+        return choiceMapper.addByList(choiceQuestions);
     }
 
     @Override

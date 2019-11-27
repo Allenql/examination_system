@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.examination.dao.ChoiceMapper">
+    <insert id="addByList">
+        INSERT INTO choicedba(question,option1,option2,option3,option4,rightAnswer,chapters)
+        VALUE
+        <foreach collection="list" item="choice" separator=",">
+            (#{choice.question},#{choice.option1},#{choice.option2},#{choice.option3},#{choice.option4},#{choice.rightAnswer},1)
+        </foreach>
+    </insert>
+
+
+</mapper>
