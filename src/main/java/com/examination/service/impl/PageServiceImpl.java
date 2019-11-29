@@ -1,6 +1,7 @@
 package com.examination.service.impl;
 
 import com.examination.dao.JudgeMapper;
+import com.examination.dao.SubjectMapper;
 import com.examination.entity.Page;
 import com.examination.service.PageService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,10 @@ import org.springframework.stereotype.Service;
 public class PageServiceImpl implements PageService {
     @Autowired
     private JudgeMapper judgeMapper;
+
+    @Autowired
+    private SubjectMapper subjectMapper;
+
     Page page = new Page();
 
     @Override
@@ -27,8 +32,8 @@ public class PageServiceImpl implements PageService {
             //count = choiceDao.getCount();
         } else if ("judge".equals(type)) {
             count = judgeMapper.getCount();
-        } else if ("sub".equals(type)) {
-            //count = subjectDao.getCount();
+        } else if ("subject".equals(type)) {
+            count = subjectMapper.getCount();
         }
         int totalPage = count % pageNumber == 0 ? count / pageNumber : count / pageNumber + 1;
 

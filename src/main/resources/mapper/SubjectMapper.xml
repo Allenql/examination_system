@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.examination.dao.SubjectMapper">
+    <insert id="addByList">
+        INSERT INTO subdba(question,refanswer)
+        VALUE
+        <foreach collection="list" item="sub" separator=",">
+            (#{sub.question},#{sub.refAnswer})
+        </foreach>
+    </insert>
+
+    <select id="getSubjectQuestionList" resultType="SubjectQuestion" parameterType="int">
+        select id,question,refanswer,secrecy from subdba limit #{currentPage},#{pageNumber}
+    </select>
+
+    <select id="getCount" resultType="int">
+        select count(1) from subdba
+    </select>
+
+    <delete id="deleteSubjectQuestionById" parameterType="long">
+        delete from subdba where id = #{id}
+    </delete>
+
+    <update id="updateSubjectQuestion" parameterType="SubjectQuestion">
+        update subdba set question = #{question},refanswer = #{refAnswer} where id = #{id}
+    </update>
+</mapper>

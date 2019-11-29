@@ -2,9 +2,11 @@ package com.examination.service.impl;
 
 import com.examination.dao.ChoiceMapper;
 import com.examination.dao.JudgeMapper;
+import com.examination.dao.SubjectMapper;
 import com.examination.entity.ChoiceQuestion;
 import com.examination.entity.JudgeQuestion;
 import com.examination.entity.Page;
+import com.examination.entity.SubjectQuestion;
 import com.examination.service.TeacherService;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.*;
@@ -29,6 +31,9 @@ public class TeacherServiceImpl implements TeacherService {
 
     @Autowired
     private ChoiceMapper choiceMapper;
+
+    @Autowired
+    private SubjectMapper subjectMapper;
 
     @Override
     public int addJudgeQuestionByExcel(InputStream inputStream) {
@@ -97,5 +102,46 @@ public class TeacherServiceImpl implements TeacherService {
     @Override
     public boolean updateJudgeQuestion(JudgeQuestion judgeQuestion) {
         return judgeMapper.updateJudgeQuestion(judgeQuestion) > 0 ? true : false;
+    }
+
+    @Override
+    public List<SubjectQuestion> getSubjectQuestionList(Page page) {
+        int currentPage = page.getCurrentPage();
+        int pageNumber = page.getPageNumber();
+        return subjectMapper.getSubjectQuestionList((currentPage - 1) * pageNumber, pageNumber);
+    }
+
+    @Override
+    public int addSubjectQuestionByExcel(InputStream inputStream) {
+        List<SubjectQuestion> subjectQuestions = new ArrayList<SubjectQuestion>();
+        try {
+            Workbook workbook = WorkbookFactory.create(inputStream);
+            Sheet sheet = workbook.getSheetAt(0);
+            DataFormatter formatter = new DataFormatter();
+
+            for (int i = 1; i <= sheet.getLastRowNum(); i++) {
+                Row row = sheet.getRow(i);
+                String question = formatter.formatCellValue(row.getCell(0));
+                String refanswer = formatter.formatCellValue(row.getCell(1));
+                SubjectQuestion subjectQuestion = new SubjectQuestion(question,refanswer);
+                subjectQuestions.add(subjectQuestion);
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InvalidFormatException e) {
+            e.printStackTrace();
+        }
+        return subjectMapper.addByList(subjectQuestions);
+    }
+
+    @Override
+    public boolean deleteSubjectQuestionById(long id) {
+        return subjectMapper.deleteSubjectQuestionById(id) > 0 ? true : false;
+    }
+
+    @Override
+    public boolean updateSubjectQuestion(SubjectQuestion subjectQuestion) {
+        return subjectMapper.updateSubjectQuestion(subjectQuestion) > 0 ? true : false;
     }
 }

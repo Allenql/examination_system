@@ -3,6 +3,7 @@ package com.examination.controller;
 
 import com.examination.entity.JudgeQuestion;
 import com.examination.entity.Page;
+import com.examination.entity.SubjectQuestion;
 import com.examination.service.PageService;
 import com.examination.service.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -186,10 +187,132 @@ public class TeacherController {
     }
 
 
+    /**
+     * 判断题修改
+     * @param judgeQuestion
+     * @return
+     * @Author zql
+     */
     @RequestMapping("judge/update")
     @ResponseBody
     public boolean updateJudgeQuestion(JudgeQuestion judgeQuestion) {
         System.out.println("judgeUqestion = " + judgeQuestion);
         return teacherService.updateJudgeQuestion(judgeQuestion);
+    }
+
+    /**
+     * 获取主观题 -- 分页查询
+     *
+     * @param model
+     * @param request
+     * @return
+     * @Author zql
+     */
+    @RequestMapping("sub_list.html")
+    public String SubList(Model model, HttpServletRequest request) {
+        //获取分页对象 用于计算总页数
+        Page page = pageService.getPage(request.getParameter("currentPage"), "subject");
+        //存入model
+        model.addAttribute("page", page);
+        //根据当前页获取判断题列表
+        List<SubjectQuestion> subjectQuestionList = teacherService.getSubjectQuestionList(page);
+        //存入model
+        model.addAttribute("subjectQuestion", subjectQuestionList);
+        return path + "sub_list";
+    }
+
+    /**
+     * 主观题模板下载
+     *
+     * @param res
+     * @Author zql
+     */
+    @RequestMapping("sub/download")
+    public void subDownload(HttpServletResponse res) {
+        res.setHeader("Content-Disposition", "attachment; filename=sub_template.xlsx");
+        res.setContentType("application/octet-stream; charset=utf-8");
+        try {
+            InputStream is = this.getClass().getClassLoader().getResourceAsStream("templates/excel/sub_template.xlsx");
+            FileCopyUtils.copy(is, res.getOutputStream());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * 主观题上传
+     *
+     * @param file
+     * @Author zql
+     */
+    @RequestMapping("sub/upload")
+    @ResponseBody
+    public boolean subUpload(@RequestParam(value = "file") MultipartFile file) {
+        try {
+            return teacherService.addSubjectQuestionByExcel(file.getInputStream()) != 0;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    /**
+     * 根据id删除主观题
+     *
+     * @param id
+     * @return
+     * @Author zql
+     */
+    @RequestMapping("sub/delete")
+    @ResponseBody
+    public boolean deleteSubjectQuestion(String id) {
+        System.out.println("subject_id = " + id);
+        long subjectid = 0;
+        if (null != id) {
+            //数据类型转换
+            subjectid = Long.parseLong(id);
+        }
+        return teacherService.deleteSubjectQuestionById(subjectid);
+    }
+
+    /**
+     * 批量删除主观题
+     *
+     * @param list
+     * @return
+     * @Author zql
+     */
+    @RequestMapping("sub/delete_batch")
+    @ResponseBody
+    public boolean deleteSubjectQuestionBatch(@RequestParam("list[]") List<Long> list) {
+        System.out.println("subject_id = " + list);
+        int count = 0;
+        //循环删除
+        for (int i = 0; i < list.size(); i++) {
+            if (teacherService.deleteSubjectQuestionById(list.get(i))) {
+                count++;
+            }
+        }
+        System.out.println("count = " + count);
+        //判断是否全部删除
+        if (count == list.size()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+    /**
+     * 主观题修改
+     * @param subjectQuestion
+     * @return
+     * @Author zql
+     */
+    @RequestMapping("sub/update")
+    @ResponseBody
+    public boolean updateSubjectQuestion(SubjectQuestion subjectQuestion) {
+        System.out.println("SubjectQuestion = " + subjectQuestion);
+        return teacherService.updateSubjectQuestion(subjectQuestion);
     }
 }

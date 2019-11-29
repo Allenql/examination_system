@@ -2,6 +2,7 @@ package com.examination.service;
 
 import com.examination.entity.JudgeQuestion;
 import com.examination.entity.Page;
+import com.examination.entity.SubjectQuestion;
 
 import java.io.InputStream;
 import java.util.List;
@@ -21,5 +22,13 @@ public interface TeacherService {
     boolean deleteJudgeQuestionById(long id);
 
     boolean updateJudgeQuestion(JudgeQuestion judgeQuestion);
+
+    List<SubjectQuestion> getSubjectQuestionList(Page page);
+
+    int addSubjectQuestionByExcel(InputStream inputStream);
+
+    boolean deleteSubjectQuestionById(long id);
+
+    boolean updateSubjectQuestion(SubjectQuestion subjectQuestion);
 
 }

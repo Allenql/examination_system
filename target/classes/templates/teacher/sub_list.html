@@ -24,7 +24,7 @@
     <div class="container-fluid">
         <img src="/images/login_icon.png" style="width:30px;float:left;margin-right:10px;margin-top:10px;"/>
         <div class="nav-header">
-            <a class="navbar-brand" href="#"> welcome to 华南理工大学</a>
+            <a class="navbar-brand" href="#"> welcome to 陕西科技大学</a>
         </div>
         <ul class="nav navbar-nav nav-right" style="float:right;">
             <li><a href="#"><span class="glyphicon glyphicon-user"
@@ -37,7 +37,7 @@
 <div style="margin: 0 auto;width: 900px;">
     <div style="margin-top:80px;margin-bottom:50px;">
         <ul class="nav nav-pills">
-            <li><a href="teacherpage.html">首页</a></li>
+            <li><a href="teacherpage">首页</a></li>
             <li><a href="question_list.html">选择题题库</a></li>
             <li><a href="truefalse_list.html">判断题题库</a></li>
             <li class="active"><a href="sub_list.html">主观题题库</a></li>
@@ -76,7 +76,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr th:each="que,stat:${subjectQuestuon}" th:id="${que.id}+'tr'"
+                        <tr th:each="que,stat:${subjectQuestion}" th:id="${que.id}+'tr'"
                             th:style="${stat.odd}? 'background-color:#ECF6EE'">
                             <td><input type="checkbox" name="id" th:id="${que.id}+'ch'"/></td>
                             <td th:text="${que.question}" contenteditable="true" th:id="${que.id}+'q'">数据库三级模式中，真正存在的是（ ）。</td>
@@ -96,14 +96,14 @@
                     <div class="add_block">
                         <div class="add_bottom">
                             共 <b id="total" th:text="${page.count}">10</b> 条
-                            <a th:if="${page.currentPage!=1}" href="sub_list?currentPage=1">首页</a>
+                            <a th:if="${page.currentPage!=1}" href="sub_list.html?currentPage=1">首页</a>
                             <a th:if="${page.currentPage!=1}"
-                               th:href="'sub_list?currentPage='+${page.currentPage-1}">上一页</a>
-                            当前第<span th:text="${page.currentPage}+'/'+${page.totalPage}">1</span>页
+                               th:href="'sub_list.html?currentPage='+${page.currentPage-1}">上一页</a>
+                            当前第<span id="totalPage" th:text="${page.currentPage}+'/'+${page.totalPage}">1</span>页
                             <a th:if="${page.currentPage!=page.totalPage}"
-                               th:href="'sub_list?currentPage='+${page.currentPage+1}">下一页</a>
+                               th:href="'sub_list.html?currentPage='+${page.currentPage+1}">下一页</a>
                             <a th:if="${page.currentPage!=page.totalPage}"
-                               th:href="'sub_list?currentPage='+${page.totalPage}">末页</a>
+                               th:href="'sub_list.html?currentPage='+${page.totalPage}">末页</a>
                             跳至&nbsp;<input id="currentPageText" type='text' th:value="${page.currentPage}"
                                            style="height:26px;"/>&nbsp;页&nbsp;
                             <a href="" id="aaa">GO</a>
@@ -131,12 +131,19 @@
 </div>
 
 <div class="footer">
-    Website by @ACJ @WTY @ICY @ZYR @DUCK @ZAL
+    Website by @ZQL
 </div>
 
 <script>
     $("#aaa").click(function () {
-        $("#aaa").attr("href", "sub_list?currentPage=" + $('#currentPageText').val())
+        var curpage = $('#currentPageText').val();
+        var total = $('#totalPage').text().substring($('#totalPage').text().indexOf("/")+1);
+        if(curpage <= 0 || isNaN(curpage) || curpage > total){
+            alert("请输入合法页数!");
+            $('#currentPageText').val('');
+            return false;
+        }
+        $("#aaa").attr("href", "sub_list.html?currentPage=" + $('#currentPageText').val())
     })
 
     function selectAll() {
