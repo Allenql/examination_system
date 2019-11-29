@@ -55,17 +55,30 @@ public class TeacherController {
         return path + "question_list";
     }
 
+    /**
+     * 获取判断题 -- 分页查询
+     *
+     * @param model
+     * @param request
+     * @return
+     * @Author zql
+     */
     @RequestMapping("truefalse_list.html")
     public String trueFalseList(Model model, HttpServletRequest request) {
+        //获取分页对象 用于计算总页数
         Page page = pageService.getPage(request.getParameter("currentPage"), "judge");
+        //存入model
         model.addAttribute("page", page);
+        //根据当前页获取判断题列表
         List<JudgeQuestion> judgeQuestionList = teacherService.getJudgeQuestionList(page);
-        model.addAttribute("judgeQuestuon",judgeQuestionList);
+        //存入model
+        model.addAttribute("judgeQuestuon", judgeQuestionList);
         return path + "truefalse_list";
     }
 
     /**
      * 选择题下载
+     *
      * @param res
      */
     @RequestMapping("choice/download")
@@ -90,8 +103,10 @@ public class TeacherController {
         }
         return false;
     }
+
     /**
      * 判断题模板下载
+     *
      * @param res
      * @Author zql
      */
@@ -109,6 +124,7 @@ public class TeacherController {
 
     /**
      * 判断题上传
+     *
      * @param file
      * @Author zql
      */
@@ -121,5 +137,59 @@ public class TeacherController {
             e.printStackTrace();
         }
         return false;
+    }
+
+    /**
+     * 根据id删除判断题
+     *
+     * @param id
+     * @return
+     * @Author zql
+     */
+    @RequestMapping("judge/delete")
+    @ResponseBody
+    public boolean deleteJudgeQuestion(String id) {
+        System.out.println("judge_id = " + id);
+        long judgeid = 0;
+        if (null != id) {
+            //数据类型转换
+            judgeid = Long.parseLong(id);
+        }
+        return teacherService.deleteJudgeQuestionById(judgeid);
+    }
+
+    /**
+     * 批量删除判断题
+     *
+     * @param list
+     * @return
+     * @Author zql
+     */
+    @RequestMapping("judge/delete_batch")
+    @ResponseBody
+    public boolean deleteJudgeQuestionBatch(@RequestParam("list[]") List<Long> list) {
+        System.out.println("judge_id = " + list);
+        int count = 0;
+        //循环删除
+        for (int i = 0; i < list.size(); i++) {
+            if (teacherService.deleteJudgeQuestionById(list.get(i))) {
+                count++;
+            }
+        }
+        System.out.println("count = " + count);
+        //判断是否全部删除
+        if (count == list.size()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+    @RequestMapping("judge/update")
+    @ResponseBody
+    public boolean updateJudgeQuestion(JudgeQuestion judgeQuestion) {
+        System.out.println("judgeUqestion = " + judgeQuestion);
+        return teacherService.updateJudgeQuestion(judgeQuestion);
     }
 }

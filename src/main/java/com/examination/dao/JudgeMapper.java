@@ -13,5 +13,10 @@ public interface JudgeMapper {
     int addByList(List<JudgeQuestion> JudgeQuestions);
 
     List<JudgeQuestion> getJudgeQuestionList(int currentPage, int pageNumber);
+
     int getCount();
+
+    int deleteJudgeQuestionById(long id);
+
+    int updateJudgeQuestion(JudgeQuestion judgeQuestion);
 }

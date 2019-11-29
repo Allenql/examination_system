@@ -16,4 +16,12 @@
     <select id="getCount" resultType="int">
         select count(1) from judgedba
     </select>
+
+    <delete id="deleteJudgeQuestionById" parameterType="long">
+        delete from judgedba where id = #{id}
+    </delete>
+
+    <update id="updateJudgeQuestion" parameterType="JudgeQuestion">
+        update judgedba set question = #{question},rightanswer = #{rightAnswer} where id = #{id}
+    </update>
 </mapper>

@@ -99,7 +99,7 @@
                             <a th:if="${page.currentPage!=1}" href="truefalse_list.html?currentPage=1">首页</a>
                             <a th:if="${page.currentPage!=1}"
                                th:href="'truefalse_list.html?currentPage='+${page.currentPage-1}">上一页</a>
-                            当前第<span th:text="${page.currentPage}+'/'+${page.totalPage}">1</span>页
+                            当前第<span id="totalPage" th:text="${page.currentPage}+'/'+${page.totalPage}">1</span>页
                             <a th:if="${page.currentPage!=page.totalPage}"
                                th:href="'truefalse_list.html?currentPage='+${page.currentPage+1}">下一页</a>
                             <a th:if="${page.currentPage!=page.totalPage}"
@@ -137,7 +137,14 @@
 
 <script>
     $("#aaa").click(function () {
-        $("#aaa").attr("href", "truefalse_list.html?currentPage=" + $('#currentPageText').val())
+        var curpage = $('#currentPageText').val();
+        var total = $('#totalPage').text().substring($('#totalPage').text().indexOf("/")+1);
+        if(curpage <= 0 || isNaN(curpage) || curpage > total){
+            alert("请输入合法页数!");
+            $('#currentPageText').val('');
+            return false;
+        }
+        $("#aaa").attr("href", "truefalse_list.html?currentPage=" + curpage)
     })
 
     function selectAll() {

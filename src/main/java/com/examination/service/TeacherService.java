@@ -18,4 +18,8 @@ public interface TeacherService {
 
     List<JudgeQuestion> getJudgeQuestionList(Page page);
 
+    boolean deleteJudgeQuestionById(long id);
+
+    boolean updateJudgeQuestion(JudgeQuestion judgeQuestion);
+
 }

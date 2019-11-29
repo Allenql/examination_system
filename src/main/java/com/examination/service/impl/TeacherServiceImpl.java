@@ -88,4 +88,14 @@ public class TeacherServiceImpl implements TeacherService {
         int pageNumber = page.getPageNumber();
         return judgeMapper.getJudgeQuestionList((currentPage - 1) * pageNumber, pageNumber);
     }
+
+    @Override
+    public boolean deleteJudgeQuestionById(long id) {
+        return judgeMapper.deleteJudgeQuestionById(id) > 0 ? true : false;
+    }
+
+    @Override
+    public boolean updateJudgeQuestion(JudgeQuestion judgeQuestion) {
+        return judgeMapper.updateJudgeQuestion(judgeQuestion) > 0 ? true : false;
+    }
 }
