@@ -12,7 +12,9 @@
     <link rel="stylesheet" type="text/css" href="/css/bootstrap-responsive.min.css"  />
     <link rel="stylesheet" type="text/css" href="/css/aaa.css"  />
 
-    <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
 
@@ -128,13 +130,13 @@
             judgids = data.judg.split(',');
             subids = data.sub.split(',');
             for (i in choiids){
-                F_get_choice(choiids[i]);
+                //F_get_choice(choiids[i]);
             }
             for (i in judgids){
                 F_get_truefalse(judgids[i]);
             }
             for (i in subids){
-                F_get_sub(subids[i]);
+                //F_get_sub(subids[i]);
             }
         });
     });

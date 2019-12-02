@@ -2,58 +2,62 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c51e69bf-0a3e-4903-bf1a-0f66262f7972" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/examination/dao/SubjectMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/SubjectMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/examination/dao/ExamMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/examination/dao/PaperMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/examination/entity/Question/Choicedba.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/examination/entity/Question/Evadba.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/examination/entity/Question/Judgedba.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/examination/entity/Question/Subdba.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/examination/service/ExamService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/examination/service/impl/ExamServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/ExamMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/PaperMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/examination/controller/TeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/examination/controller/TeacherController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/examination/service/TeacherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/examination/service/TeacherService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/examination/service/impl/PageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/examination/service/impl/PageServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/examination/service/impl/TeacherServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/examination/service/impl/TeacherServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/_/_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/_/_login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/_/_student_exercise.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/_/_student_exercise.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/_/_student_exercise_choice.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/_/_student_exercise_choice.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/add_student.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/add_student.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/add_teacher.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/add_teacher.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/admin_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/admin_info.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/adminpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/adminpage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/student_manage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/student_manage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/teacher_manage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/teacher_manage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/change_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/change_info.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/student/student_chart.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/student/student_chart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/student/student_evaluating_list_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/student/student_evaluating_list_delete.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/student/student_evaluating_list_insert.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/student/student_evaluating_list_insert.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/student/student_evaluating_list_select.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/student/student_evaluating_list_select.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/student/student_evaluating_list_update.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/student/student_evaluating_list_update.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/student/student_evaluating_question.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/student/student_evaluating_question.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/student/student_exercise.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/student/student_exercise.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/student/student_exercise_choice.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/student/student_exercise_choice.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/student/student_exercise_sub.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/student/student_exercise_sub.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/student/student_exercise_truefalse.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/student/student_exercise_truefalse.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/student/student_grade.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/student/student_grade.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/student/student_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/student/student_info.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/student/student_status.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/student/student_status.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/student/student_test.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/student/student_test.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/student/student_test_ing.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/student/student_test_ing.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/student/studentpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/student/studentpage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/teacher/choice_combine.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/teacher/choice_combine.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/teacher/judge_combine.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/teacher/judge_combine.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/teacher/other_config.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/teacher/other_config.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/teacher/pigai_test_ing.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/teacher/pigai_test_ing.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/teacher/question_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/teacher/question_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/teacher/see_test_ing.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/teacher/see_test_ing.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/teacher/student_chart.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/teacher/student_chart.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/teacher/student_grade.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/teacher/student_grade.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/teacher/student_grade_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/teacher/student_grade_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/teacher/sub_combine.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/teacher/sub_combine.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/teacher/sub_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/teacher/sub_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/teacher/teacher_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/teacher/teacher_info.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/teacher/teacher_test_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/teacher/teacher_test_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/teacher/teacherpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/teacher/teacherpage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/teacher/truefalse_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/teacher/truefalse_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/examination/controller/TeacherController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/examination/controller/TeacherController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/teacher/sub_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/teacher/sub_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/teacher/teacherpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/teacher/teacherpage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/teacher/truefalse_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/teacher/truefalse_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/_/_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/_/_login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/_/_student_exercise.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/_/_student_exercise.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/_/_student_exercise_choice.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/_/_student_exercise_choice.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/add_student.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/add_student.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/add_teacher.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/add_teacher.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/admin_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/admin_info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/adminpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/adminpage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/student_manage.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/student_manage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/teacher_manage.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/teacher_manage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/change_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/change_info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/student/student_chart.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/student/student_chart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/student/student_evaluating_list_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/student/student_evaluating_list_delete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/student/student_evaluating_list_insert.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/student/student_evaluating_list_insert.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/student/student_evaluating_list_select.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/student/student_evaluating_list_select.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/student/student_evaluating_list_update.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/student/student_evaluating_list_update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/student/student_evaluating_question.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/student/student_evaluating_question.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/student/student_exercise.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/student/student_exercise.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/student/student_exercise_choice.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/student/student_exercise_choice.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/student/student_exercise_sub.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/student/student_exercise_sub.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/student/student_exercise_truefalse.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/student/student_exercise_truefalse.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/student/student_grade.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/student/student_grade.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/student/student_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/student/student_info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/student/student_status.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/student/student_status.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/student/student_test.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/student/student_test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/student/student_test_ing.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/student/student_test_ing.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/student/studentpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/student/studentpage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/teacher/choice_combine.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/teacher/choice_combine.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/teacher/judge_combine.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/teacher/judge_combine.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/teacher/other_config.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/teacher/other_config.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/teacher/pigai_test_ing.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/teacher/pigai_test_ing.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/teacher/question_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/teacher/question_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/teacher/see_test_ing.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/teacher/see_test_ing.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/teacher/student_chart.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/teacher/student_chart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/teacher/student_grade.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/teacher/student_grade.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/teacher/student_grade_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/teacher/student_grade_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/teacher/sub_combine.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/teacher/sub_combine.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/teacher/teacher_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/teacher/teacher_info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/teacher/teacher_test_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/teacher/teacher_test_list.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -64,8 +68,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -104,7 +108,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/mapper" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/cpms" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -119,11 +123,11 @@
       <recent name="com.examination.service" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\GitHub\examination_sys\src\main\java\com\examination\entity" />
       <recent name="D:\GitHub\examination_sys\src\main\resources\mapper" />
+      <recent name="D:\GitHub\examination_sys\src\main\resources\static\images" />
       <recent name="C:\Users\Administrator\Desktop\examination_sys\src\main\java\com\examination\controller" />
       <recent name="C:\Users\Administrator\Desktop\examination_sys\src\main\resources" />
-      <recent name="C:\Users\Administrator\Desktop\examination_sys\src\main\java\com\examination\interceptor" />
-      <recent name="C:\Users\Administrator\Desktop\examination_sys\src\main\java\com\examination\entity" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -164,7 +168,9 @@
       <workItem from="1574773819894" duration="7797000" />
       <workItem from="1574853996218" duration="9846000" />
       <workItem from="1574952761147" duration="1405000" />
-      <workItem from="1575030910495" duration="11040000" />
+      <workItem from="1575030910495" duration="14154000" />
+      <workItem from="1575210779360" duration="5167000" />
+      <workItem from="1575291883668" duration="1796000" />
     </task>
     <task id="LOCAL-00001" summary="数据库在线考试系统项目初始化">
       <created>1574688683601</created>
@@ -208,7 +214,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575035432489</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="主观题模块代码提交">
+      <created>1575042160306</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1575042160306</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -232,6 +245,7 @@
     <MESSAGE value="取消登录验证" />
     <MESSAGE value="判断题上传下载" />
     <MESSAGE value="判断题删除与修改" />
-    <option name="LAST_COMMIT_MESSAGE" value="判断题删除与修改" />
+    <MESSAGE value="主观题模块代码提交" />
+    <option name="LAST_COMMIT_MESSAGE" value="主观题模块代码提交" />
   </component>
 </project>

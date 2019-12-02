@@ -1,12 +1,7 @@
 package com.examination.service.impl;
 
-import com.examination.dao.ChoiceMapper;
-import com.examination.dao.JudgeMapper;
-import com.examination.dao.SubjectMapper;
-import com.examination.entity.ChoiceQuestion;
-import com.examination.entity.JudgeQuestion;
-import com.examination.entity.Page;
-import com.examination.entity.SubjectQuestion;
+import com.examination.dao.*;
+import com.examination.entity.*;
 import com.examination.service.TeacherService;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.*;
@@ -17,6 +12,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author :zql
@@ -34,6 +30,12 @@ public class TeacherServiceImpl implements TeacherService {
 
     @Autowired
     private SubjectMapper subjectMapper;
+
+    @Autowired
+    private ExamMapper examMapper;
+
+    @Autowired
+    private PaperMapper paperMapper;
 
     @Override
     public int addJudgeQuestionByExcel(InputStream inputStream) {
@@ -143,5 +145,15 @@ public class TeacherServiceImpl implements TeacherService {
     @Override
     public boolean updateSubjectQuestion(SubjectQuestion subjectQuestion) {
         return subjectMapper.updateSubjectQuestion(subjectQuestion) > 0 ? true : false;
+    }
+
+    @Override
+    public List<Map> listPaper(long tid){
+        return examMapper.listPaper(tid);
+    }
+
+    @Override
+    public Paper getPaper(long pid) {
+        return examMapper.getPaper(pid);
     }
 }

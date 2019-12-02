@@ -3,7 +3,10 @@ package com.examination.controller;
 
 import com.examination.entity.JudgeQuestion;
 import com.examination.entity.Page;
+import com.examination.entity.Paper;
+import com.examination.entity.Question.Judgedba;
 import com.examination.entity.SubjectQuestion;
+import com.examination.service.ExamService;
 import com.examination.service.PageService;
 import com.examination.service.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +25,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/teacher")
@@ -32,6 +36,8 @@ public class TeacherController {
     private TeacherService teacherService;
     @Autowired
     private PageService pageService;
+    @Autowired
+    private ExamService examService;
 
     @RequestMapping(value = "")
     String index(Model model, HttpSession httpSession) {
@@ -189,6 +195,7 @@ public class TeacherController {
 
     /**
      * 判断题修改
+     *
      * @param judgeQuestion
      * @return
      * @Author zql
@@ -305,6 +312,7 @@ public class TeacherController {
 
     /**
      * 主观题修改
+     *
      * @param subjectQuestion
      * @return
      * @Author zql
@@ -314,5 +322,86 @@ public class TeacherController {
     public boolean updateSubjectQuestion(SubjectQuestion subjectQuestion) {
         System.out.println("SubjectQuestion = " + subjectQuestion);
         return teacherService.updateSubjectQuestion(subjectQuestion);
+    }
+
+    /**
+     * 试卷列表页面
+     *
+     * @return
+     * @Author zql
+     */
+    @RequestMapping("teacher_test_list.html")
+    public String teacherTestList() {
+        return path + "teacher_test_list";
+    }
+
+    /**
+     * 试卷列表
+     *
+     * @param httpSession
+     * @return
+     * @Author zql
+     */
+    @RequestMapping(value = "teacher_test_list_content")
+    @ResponseBody
+    public List<Map> teacherTestListContent(HttpSession httpSession) {
+//        long tid = (long) httpSession.getAttribute("userid");
+        //暂时没有写登录  暂且给定一个默认值
+        long tid = 1;
+        return teacherService.listPaper(tid);
+    }
+
+    /**
+     * 查询学生成绩
+     *
+     * @return
+     * @Author zql
+     */
+    @RequestMapping(value = "student_grade.html")
+    public String studentGrade() {
+        return path + "student_grade";
+    }
+
+    /**
+     * 查询试卷初始化
+     *
+     * @param pid
+     * @return
+     * @Author zql
+     */
+    @RequestMapping("see_test_ing")
+    public String seeTestIng(String pid) {
+        System.out.println("pid = " + pid);
+
+        return path + "see_test_ing";
+    }
+
+
+    /**
+     * 查询试卷详细信息
+     *
+     * @param pid
+     * @return
+     * @Author zql
+     */
+    @RequestMapping("teacher_see_paper")
+    @ResponseBody
+    public Paper teacherSeePaper(long pid) {
+        return teacherService.getPaper(pid);
+    }
+
+
+    /**
+     * 根据id查询判断题
+     *
+     * @param id
+     * @return
+     */
+    @RequestMapping("/truefalse_get_questionByAns")
+    @ResponseBody
+    public Judgedba truefalseGetQuestionByAns(long id) {
+        System.out.println("id = " + id);
+        System.out.println(examService.getJudgedbaById_Ans(id));
+        return examService.getJudgedbaById_Ans(id);
     }
 }

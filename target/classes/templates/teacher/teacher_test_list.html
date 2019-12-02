@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
 	<meta charset="utf-8"/>
 	<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
@@ -7,12 +7,16 @@
 	<link href="/css/bbb.css" type="text/css" rel="stylesheet" media="screen"/>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 
-	<link rel="stylesheet" type="text/css" href="/css/bootstrap.css"  />
-	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"  />
-	<link rel="stylesheet" type="text/css" href="/css/bootstrap-responsive.css"  />
-	<link rel="stylesheet" type="text/css" href="/css/bootstrap-responsive.min.css"  />
-	<link rel="stylesheet" type="text/css" href="/css/aaa.css"  />
-	<script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"/>
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.css"/>
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap-responsive.css"/>
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap-responsive.min.css"/>
+	<script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/css/aaa.css"/>
+
+	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css"/>
+	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -20,7 +24,7 @@
 	<div class="container-fluid">
 		<img src="/images/login_icon.png" style="width:30px;float:left;margin-right:10px;margin-top:10px;"/>
 		<div class="nav-header">
-			<a class="navbar-brand" href="#"> welcome to 华南理工大学</a>
+			<a class="navbar-brand" href="#"> welcome to 陕西科技大学</a>
 		</div>
 		<ul class="nav navbar-nav nav-right" style="float:right;">
 			<li><a href="../change_info"><span class="glyphicon glyphicon-user" th:text="'  欢迎你！' +${session.name} + ' ' +${session.permission}"></span></a></li>
@@ -31,7 +35,7 @@
 <div style="margin: 0 auto;width: 900px;">
 	<div style="margin-top:80px;margin-bottom:50px;">
 		<ul class="nav nav-pills">
-			<li><a href="teacherpage.html">首页</a></li>
+			<li><a href="teacherpage">首页</a></li>
 			<li><a href="question_list.html">选择题题库</a></li>
 			<li><a href="truefalse_list.html">判断题题库</a></li>
 			<li><a href="sub_list.html">主观题题库</a></li>
@@ -60,7 +64,7 @@
 
 </div>
 <div class="footer">
-	Website by @ACJ @WTY @ICY @ZYR @DUCK @ZAL
+	Website by @ZQL
 </div>
 
 <script>
