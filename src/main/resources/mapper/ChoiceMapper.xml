@@ -9,25 +9,5 @@
         </foreach>
     </insert>
 
-    <select id="choiceList" resultType="ChoiceQuestion">
-        select * from choicedba
-        limit #{currentPage},#{pageNumber}
-    </select>
-
-    <select id="getCount" resultType="int">
-        select count(*) from choicedba
-    </select>
-
-    <update id="updateChoiceQuestion">
-        update choicedba set question=#{question},option1=#{option1},option2=#{option2},option3=#{option3},option4=#{option4},rightAnswer=#{rightAnswer}
-        where id=#{id}
-    </update>
-
-    <delete id="deleteChoiceQuestion">
-        delete from choicedba where id in
-        <foreach collection="list" item="list" open="(" separator="," close=")">
-            #{list}
-        </foreach>
-    </delete>
 
 </mapper>

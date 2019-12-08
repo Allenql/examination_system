@@ -2,7 +2,6 @@ package com.examination.dao;
 
 import com.examination.entity.ChoiceQuestion;
 import com.examination.entity.JudgeQuestion;
-import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -14,11 +13,4 @@ import java.util.List;
 public interface ChoiceMapper {
     int addByList(List<ChoiceQuestion> choiceQuestions);
 
-    List<ChoiceQuestion> choiceList(int currentPage, int pageNumber);
-
-    int getCount();
-
-    boolean updateChoiceQuestion(ChoiceQuestion choiceQuestion);
-
-    boolean deleteChoiceQuestion(List<String> list);
 }

@@ -1,18 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
     <title>学生考试中</title>
-
+    <link href="/css/bbb.css" type="text/css" rel="stylesheet" media="screen"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css"  />
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"  />
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap-responsive.css"  />
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap-responsive.min.css"  />
-    <link rel="stylesheet" type="text/css" href="/css/aaa.css"  />
 
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap-responsive.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap-responsive.min.css"/>
     <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/aaa.css"/>
+
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
 
@@ -70,7 +74,6 @@
     var timeCounter = (function() {
 
         var total = 3600;
-        console.log("hello");
         return function(elemID) {
             obj = document.getElementById("time_clock");
             var s = (total%60) < 10 ? ('0' + total%60) : total%60;

@@ -12,4 +12,40 @@
     <select id="getJudgedbaById_Ans" parameterType="long" resultType="Judgedba">
         SELECT * FROM judgedba WHERE id=#{id}
     </select>
+
+    <select id="listPaperByClass" parameterType="String" resultType="Paper">
+        select * from paper where classid like '%|${classid}|%';
+    </select>
+
+    <select id="findChoicedbaById_noAns" resultType="Choicedba" parameterType="long">
+        SELECT id, question, option1, option2, option3, option4 FROM choicedba WHERE id=#{id}
+    </select>
+
+    <select id="findJudgedbaById_noAns" resultType="Judgedba" parameterType="long">
+        SELECT id, question FROM judgedba WHERE id=#{id}
+    </select>
+
+    <select id="findSubdbaById_noAns" resultType="Subdba" parameterType="long">
+        SELECT id, question FROM subdba WHERE id=#{id}
+    </select>
+
+    <select id="paperTested" resultType="int">
+        SELECT COUNT(*) FROM record WHERE sid=#{sid} AND pid=#{pid}
+    </select>
+
+    <select id="findPaperById" resultType="Paper">
+        SELECT * FROM paper WHERE id=#{id}
+    </select>
+
+    <insert id="submit" parameterType="Record" useGeneratedKeys="true" keyProperty="runid">
+        INSERT INTO record(sid, pid, record, status, score)
+        VALUES (#{sid},#{pid},#{record},'等待批改',0);
+    </insert>
+
+    <select id="listGradeBySid" resultType="Map">
+        SELECT pid,paper.name as pname,teacher.name as tname,paper.begintime,paper.finishtime,record.score
+        FROM record INNER JOIN paper on paper.id=record.pid
+            inner JOIN teacher on teacher.id=paper.tid
+        WHERE sid = #{sid} AND status = '已批改';
+    </select>
 </mapper>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.examination.dao.ExerciseMapper">
+    <select id="findEvadbaByType" resultType="Map">
+        SELECT id, title, question, type, intable FROM evadba WHERE type = #{type};
+    </select>
+
+    <select id="findEvadbaById_noAns" resultType="Evadba">
+        SELECT id, question,type FROM evadba WHERE id=#{id}
+    </select>
+
+    <select id="findEvadbaById_Ans" resultType="Evadba">
+        SELECT * FROM evadba WHERE id=#{id}
+    </select>
+
+    <select id="findChoicedbaById_Ans" resultType="Choicedba">
+        SELECT * FROM choicedba WHERE id=#{id}
+    </select>
+</mapper>
