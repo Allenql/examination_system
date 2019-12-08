@@ -20,6 +20,7 @@ public class LoginController {
     @RequestMapping(value = "/doLogin",method = RequestMethod.POST)
     @ResponseBody
     String doLogin(){
-        return "/student";
+//        return "/student";
+        return "/teacher";
     }
 }

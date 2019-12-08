@@ -156,4 +156,26 @@ public class TeacherServiceImpl implements TeacherService {
     public Paper getPaper(long pid) {
         return examMapper.getPaper(pid);
     }
+
+
+    public List<ChoiceQuestion> choiceList(int currentPage, int pageNumber) {
+
+        return choiceMapper.choiceList(currentPage,pageNumber);
+    }
+
+    @Override
+    public int getCount() {
+        return choiceMapper.getCount();
+    }
+
+    @Override
+    public boolean updateChoiceQuestion(ChoiceQuestion choiceQuestion) {
+        return choiceMapper.updateChoiceQuestion(choiceQuestion);
+    }
+
+    @Override
+    public boolean deleteChoiceQuestion(List<String> list) {
+        return choiceMapper.deleteChoiceQuestion(list);
+    }
+
 }

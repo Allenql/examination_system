@@ -1,6 +1,6 @@
 package com.examination.controller;
 
-
+import com.examination.entity.ChoiceQuestion;
 import com.examination.entity.JudgeQuestion;
 import com.examination.entity.Page;
 import com.examination.entity.Paper;
@@ -26,6 +26,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 @Controller
 @RequestMapping("/teacher")
@@ -57,8 +60,29 @@ public class TeacherController {
     }
 
 
+    /**
+     * 选择题列表查询
+     * @return
+     */
     @RequestMapping("question_list.html")
-    public String questionList() {
+    public String questionList(Model model,String currentPage) {
+        Page page = new Page();
+        //page.getCurrentPage(); //当前页
+        //page.getPageNumber(); //页面最大容量
+        if(currentPage!=null){
+            page.setCurrentPage(Integer.parseInt(currentPage));
+        }
+        List<ChoiceQuestion> list = teacherService.choiceList( page.getCurrentPage(),page.getPageNumber());
+
+        page.setCount(teacherService.getCount());
+        if(teacherService.getCount() % page.getPageNumber() == 0){
+            page.setTotalPage(teacherService.getCount()/page.getPageNumber());
+        }else{
+            page.setTotalPage(teacherService.getCount()/page.getPageNumber()+1);
+        }
+
+        model.addAttribute("page",page);
+        model.addAttribute("choiceQuestuon",list);
         return path + "question_list";
     }
 
@@ -98,6 +122,24 @@ public class TeacherController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * 选择题修改
+     * @param choiceQuestion
+     * @return
+     */
+    @RequestMapping("/choice/update")
+    @ResponseBody
+    public boolean updateChoiceQuestion(ChoiceQuestion choiceQuestion){
+        return teacherService.updateChoiceQuestion(choiceQuestion);
+    }
+
+    @RequestMapping("/choice/delete")
+    @ResponseBody
+    public boolean deleteChoiceQuestion(@RequestParam("ids[]")String[] ids){
+        List<String> list = new ArrayList<>(Arrays.asList(ids));
+        return teacherService.deleteChoiceQuestion(list);
     }
 
     @RequestMapping("choice/upload")
