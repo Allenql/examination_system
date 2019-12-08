@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.examination.dao.JudgeMapper">
+    <insert id="addByList">
+        INSERT INTO judgedba(question,rightanswer)
+        VALUE
+        <foreach collection="list" item="choice" separator=",">
+            (#{choice.question},#{choice.rightAnswer})
+        </foreach>
+    </insert>
+
+    <select id="getJudgeQuestionList" resultType="JudgeQuestion" parameterType="int">
+        select id,question,rightanswer,secrecy from judgedba limit #{currentPage},#{pageNumber}
+    </select>
+
+    <select id="getCount" resultType="int">
+        select count(1) from judgedba
+    </select>
+
+    <delete id="deleteJudgeQuestionById" parameterType="long">
+        delete from judgedba where id = #{id}
+    </delete>
+
+    <update id="updateJudgeQuestion" parameterType="JudgeQuestion">
+        update judgedba set question = #{question},rightanswer = #{rightAnswer} where id = #{id}
+    </update>
+</mapper>

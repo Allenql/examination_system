@@ -44,7 +44,6 @@
             <li><a href="student_grade.html">查询学生成绩</a></li>
             <li><a href="teacher_test_list.html">试卷列表</a></li>
             <li><a href="teacher_info.html">个人信息</a></li>
-
         </ul>
     </div>
 
@@ -105,18 +104,18 @@
                     </table>
                     <div class="add_block">
                         <div class="add_bottom">
-<!--                            共 <b id="total" th:text="${page.count}">10</b> 条-->
-<!--                            <a th:if="${page.currentPage!=1}" href="question_list?currentPage=1">首页</a>-->
-<!--                            <a th:if="${page.currentPage!=1}"-->
-<!--                               th:href="'question_list?currentPage='+${page.currentPage-1}">上一页</a>-->
-<!--                            当前第<span th:text="${page.currentPage}+'/'+${page.totalPage}">1</span>页-->
-<!--                            <a th:if="${page.currentPage!=page.totalPage}"-->
-<!--                               th:href="'question_list?currentPage='+${page.currentPage+1}">下一页</a>-->
-<!--                            <a th:if="${page.currentPage!=page.totalPage}"-->
-<!--                               th:href="'question_list?currentPage='+${page.totalPage}">末页</a>-->
-<!--                            跳至&nbsp;<input id="currentPageText" type='text' th:value="${page.currentPage}"-->
-<!--                                           style="height:26px;"/>&nbsp;页&nbsp;-->
-<!--                            <a href="" id="aaa">GO</a>-->
+                            共 <b id="total" th:text="${page.count}">10</b> 条
+                            <a th:if="${page.currentPage!=1}" href="question_list.html">首页</a>
+                            <a th:if="${page.currentPage!=1}"
+                               th:href="'question_list.html?currentPage='+${page.currentPage-1}">上一页</a>
+                            当前第<span th:text="${page.currentPage}+'/'+${page.totalPage}" id="getCurrentPage">1</span>页
+                            <a th:if="${page.currentPage!=page.totalPage}"
+                               th:href="'question_list.html?currentPage='+${page.currentPage+1}">下一页</a>
+                            <a th:if="${page.currentPage!=page.totalPage}"
+                               th:href="'question_list.html?currentPage='+${page.totalPage}">末页</a>
+                            跳至&nbsp;<input id="currentPageText" type='text' th:value="${page.currentPage}"
+                                           style="height:26px;"/>&nbsp;页&nbsp;
+                            <a href="" id="aaa">GO</a>
                         </div>
 
                     </div>
@@ -146,7 +145,13 @@
 
 <script>
     $("#aaa").click(function () {
-        $("#aaa").attr("href", "question_list?currentPage=" + $('#currentPageText').val())
+        var currentPage = $("#getCurrentPage").text().substring($("#getCurrentPage").text().indexOf("/")+1);
+        if($('#currentPageText').val()>currentPage){
+            $("#currentPageText").val('');
+            alert("超出索引范围");
+        }else {
+            $("#aaa").attr("href", "question_list.html?currentPage=" + $('#currentPageText').val())
+        }
     })
 
     function selectAll() {
@@ -170,6 +175,7 @@
 
     }
 
+    //删除
     function deleteChoiceBatch() {
         var IDs = new Array();
         $("input[name='id']:checked").each(function () {
@@ -177,7 +183,7 @@
             IDs.push(id);
         })
         console.log(IDs);
-        $.post("/teacher/choice/delete_batch", {list: IDs}, function (data, status) {
+        $.post("/teacher/choice/delete", {ids: IDs}, function (data, status) {
             if (data) {
                 $("input[name='id']:checked").each(function () {
                     var id = $(this).attr("id").replace('ch', 'tr');
@@ -191,6 +197,7 @@
         });
     }
 
+    //修改
     function updateChoiceQuestion(obj) {
         var d = {
             id: obj.id.replace('u', ''),
@@ -201,12 +208,12 @@
             option4: $('#' + obj.id.replace('u', 'd')).text(),
             rightAnswer: $('#' + obj.id.replace('u', 'an')).text(),
         }
-        $.post("/teacher/choice/update", d, function (data, status) {
+        $.post("/teacher/choice/update", d, function (data) {
             if (data) {
                 alert("修改成功！");
-            }
-            else
+            }else{
                 alert("修改失败！");
+            }
         });
     }
 

@@ -1,5 +1,6 @@
 package com.examination.service;
 
+import com.examination.entity.ChoiceQuestion;
 import com.examination.entity.JudgeQuestion;
 import com.examination.entity.Page;
 import com.examination.entity.Paper;
@@ -37,4 +38,11 @@ public interface TeacherService {
 
     Paper getPaper(long pid);
 
+    List<ChoiceQuestion> choiceList(int currentPage, int pageNumber);
+
+    int getCount();
+
+    boolean updateChoiceQuestion(ChoiceQuestion choiceQuestion);
+
+    boolean deleteChoiceQuestion(List<String> list);
 }
